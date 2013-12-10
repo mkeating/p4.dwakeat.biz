@@ -79,48 +79,78 @@ class tales_controller extends base_controller {
 		print_r($tale);
 		echo '<pre>';
 
-		#prepare user_tale to be inserted 
-		$user_tale = Array(
-			"content" => $_POST['content'],
-			"tale_id" => $this->user->current_tale,
-			"user_id" => $this->user->user_id,
-			"section" => $tale[0]['place']);
-		
-		echo '<pre>';
-		print_r($user_tale);
-		echo '<pre>';
+		#check to see if this is the 4th and final part of the story
+		if($tale[0]['place'] == 4){
 
-		//DB::instance(DB_NAME)->insert('users_tales', $user_tale);
+			#prepare user_tale to be inserted 
+			$user_tale = Array(
+				"content" => $_POST['content'],
+				"tale_id" => $this->user->current_tale,
+				"user_id" => $this->user->user_id,
+				"section" => $tale[0]['place']);
 
-		#get the next user(assumes user already exists, for now)
+			DB::instance(DB_NAME)->insert('users_tales', $user_tale);
 
-		$q = "SELECT *
-			FROM users 
-			WHERE email = '".$_POST['email_next']."'";
+			#set previous author's current_tale to NULL
+			$last_author = $tale[0]['current_author'];
+			$update_last_author = Array("current_tale" => NULL);
+			DB::instance(DB_NAME)->update("users", $update_last_author, "WHERE user_id = '".$last_author."'");
 
-		$next_author = DB::instance(DB_NAME)->select_rows($q);
-		echo '<pre>';
-		print_r($next_user);
-		echo '<pre>';
+			# update tale
+			$update_tale = Array("complete" => 1);
+			DB::instance(DB_NAME)->update("tales", $update_tale, "WHERE tale_id = '".$tale[0]['tale_id']."'");
 
-		#set previous author's current_tale to NULL
-		$last_author = $tale[0]['current_author'];
-		$update_last_author = Array("current_tale" => NULL);
-		DB::instance(DB_NAME)->update("users", $update_last_author, "WHERE user_id = '".$last_author."'");
+			# send an email to all authors
 
-		# update tale
-		$update_tale = Array(
-			"current_author" => $next_user[0]['user_id'],
-			"place" => $tale[0]['place'] + 1);
+		}
+		else{
 
-		DB::instance(DB_NAME)->update("tales", $update_tale, "WHERE tale_id = '".$tale[0]['tale_id']."'");
+			#prepare user_tale to be inserted 
+			$user_tale = Array(
+				"content" => $_POST['content'],
+				"tale_id" => $this->user->current_tale,
+				"user_id" => $this->user->user_id,
+				"section" => $tale[0]['place']);
+			
+			echo '<pre>';
+			print_r($user_tale);
+			echo '<pre>';
 
-		#update current_tale for next_author in users
+			DB::instance(DB_NAME)->insert('users_tales', $user_tale);
 
-		$update_next_author = Array("current_tale" => $tale[0]['tale_id']);
-		DB::instance(DB_NAME)->update("users", $update_next_author, "WHERE user_id = '".$next_author[0]['user_id']."'");
+			#get the next user(assumes user already exists, for now)
 
-		
+			$q = "SELECT *
+				FROM users 
+				WHERE email = '".$_POST['email_next']."'";
+
+			$next_author = DB::instance(DB_NAME)->select_rows($q);
+			echo '<pre>';
+			print_r($next_author);
+			echo '<pre>';
+
+			#set previous author's current_tale to NULL
+			$last_author = $tale[0]['current_author'];
+			$update_last_author = Array("current_tale" => NULL);
+			DB::instance(DB_NAME)->update("users", $update_last_author, "WHERE user_id = '".$last_author."'");
+
+			# update tale
+			$update_tale = Array(
+				"current_author" => $next_author[0]['user_id'],
+				"place" => $tale[0]['place'] + 1);
+
+			DB::instance(DB_NAME)->update("tales", $update_tale, "WHERE tale_id = '".$tale[0]['tale_id']."'");
+
+			#update current_tale for next_author in users
+
+			$update_next_author = Array("current_tale" => $tale[0]['tale_id']);
+			DB::instance(DB_NAME)->update("users", $update_next_author, "WHERE user_id = '".$next_author[0]['user_id']."'");
+			}
+			
+			#send email to next_author
+
+			#redirect
+			Router::redirect('/users/home');
 
 	}
 	

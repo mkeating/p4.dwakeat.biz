@@ -31,15 +31,13 @@
 	<form method='POST' action='/tales/p_continue' role='form'>
 		
 		<div class='form_group'>
-			<label for='content'>Continue the story:</label>
+			<?php if(isset($label)) echo $label; ?>
 			<input type='text' name='content' class="form-control">
 		</div>
 		<br>
 		<!-- Need a check here to see if the Tale is at section=3, if so, omit pass it along field -->
-		<div class='form_group'>
-			<label for='email_next'>Pass it along</label>
-			<input type='text' name='email_next' class="form-control" placeholder='Email of who to pass along to'>
-		</div>
+		<?php if(isset($email_form)) echo $email_form; ?>
+		
 		<br>
 		<button type='submit' class='btn btn-default'>Submit</button>
 	</form>

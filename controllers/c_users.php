@@ -151,12 +151,27 @@ class users_controller extends base_controller {
 
 			$story_results = DB::instance(DB_NAME)->select_rows($q);
 			$story = '';
+
+			if (sizeof($story_results) == 3){
+				$label = "<label for='content'>Finish the story:</label>";
+				$email_form = "";
+			}
+			else{
+				$label = "<label for='content'>Continue the story:</label>";
+				$email_form = "<div class='form_group'>
+									<label for='email_next'>Pass it along</label>
+									<input type='text' name='email_next' class='form-control' placeholder='Email of who to pass along to'>
+								</div>";
+			}
 			
 			foreach ($story_results as $key => $value) {
 				$story = $story.$value['content'];
 			}
 
 			$this->template->content->story = $story;
+			$this->template->content->label= $label;
+			$this->template->content->email_form = $email_form;
+
 		}
 
 		# Pass data to the view
