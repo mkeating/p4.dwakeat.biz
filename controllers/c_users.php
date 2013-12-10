@@ -143,6 +143,22 @@ class users_controller extends base_controller {
 		# set title in template
 		$this->template->title = "Welcome, ".$this->user->name;
 
+		#check if they have a current story
+		if($this->user->current_tale){
+			$q = "SELECT content
+			FROM users_tales
+			WHERE tale_id = ".$this->user->current_tale;
+
+			$story_results = DB::instance(DB_NAME)->select_rows($q);
+			$story = '';
+			
+			foreach ($story_results as $key => $value) {
+				$story = $story.$value['content'];
+			}
+
+			$this->template->content->story = $story;
+		}
+
 		# Pass data to the view
 		$this->template->content->error = $error;
 
