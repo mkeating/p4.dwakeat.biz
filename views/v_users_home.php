@@ -12,6 +12,7 @@
 	<br>
 	<div class='form_group'>
 		<label for='content'>Start a story:</label>
+		<!-- need a JS check for word limit -->
 		<input type='text' name='content' class="form-control">
 	</div>
 	<br>
@@ -26,12 +27,14 @@
 	<p>Continue Tale</p>
 	<!-- Display the current contents of the Tale -->
 	<p>THE STORY SO FAR....</p>
+	<?php if(isset($story_title)) echo $story_title; ?>
 	<?php if(isset($story)) echo $story; ?>
 	<br><br>
 	<form method='POST' action='/tales/p_continue' role='form'>
 		
 		<div class='form_group'>
 			<?php if(isset($label)) echo $label; ?>
+			<!-- need a JS check for word limit -->
 			<input type='text' name='content' class="form-control">
 		</div>
 		<br>
@@ -43,4 +46,3 @@
 	</form>
 
 <?php endif ?>
-<!--else, display current Tale -->

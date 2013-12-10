@@ -140,9 +140,6 @@ class users_controller extends base_controller {
 		# setup view
 		$this->template->content = View::instance('v_users_home');
 
-		# set title in template
-		$this->template->title = "Welcome, ".$this->user->name;
-
 		#check if they have a current story
 		if($this->user->current_tale){
 			$q = "SELECT content
@@ -151,6 +148,12 @@ class users_controller extends base_controller {
 
 			$story_results = DB::instance(DB_NAME)->select_rows($q);
 			$story = '';
+
+			$q = "SELECT title
+				FROM tales
+				WHERE tale_id = ".$this->user->current_tale;
+
+			$title = DB::instance(DB_NAME)->select_field($q);
 
 			if (sizeof($story_results) == 3){
 				$label = "<label for='content'>Finish the story:</label>";
@@ -168,6 +171,8 @@ class users_controller extends base_controller {
 				$story = $story.$value['content'];
 			}
 
+			$this->template->content->greeting = $greeting;
+			$this->template->content->story_title = $title;
 			$this->template->content->story = $story;
 			$this->template->content->label= $label;
 			$this->template->content->email_form = $email_form;
