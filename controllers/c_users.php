@@ -171,7 +171,7 @@ class users_controller extends base_controller {
 				$story = $story.$value['content'];
 			}
 
-			$this->template->content->greeting = $greeting;
+			//$this->template->content->greeting = $greeting;
 			$this->template->content->story_title = $title;
 			$this->template->content->story = $story;
 			$this->template->content->label= $label;

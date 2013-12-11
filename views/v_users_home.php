@@ -28,6 +28,7 @@
 	<!-- Display the current contents of the Tale -->
 	<p>THE STORY SO FAR....</p>
 	<?php if(isset($story_title)) echo $story_title; ?>
+	<br>
 	<?php if(isset($story)) echo $story; ?>
 	<br><br>
 	<form method='POST' action='/tales/p_continue' role='form'>

@@ -62,6 +62,8 @@ class tales_controller extends base_controller {
 	
 
 	public function p_continue(){
+		
+
 		#check for empty fields
 		foreach($_POST as $field => $value){
 			if(empty($value)){
@@ -69,15 +71,25 @@ class tales_controller extends base_controller {
 			}
 		}
 
+
 		#get tale properties
 		$q = "SELECT *
 			FROM tales 
 			WHERE tale_id = '".$this->user->current_tale."'";
 
 		$tale = DB::instance(DB_NAME)->select_rows($q);
+
+		
+		# get all authors, to deny repeats
+		$q = "SELECT *
+			FROM users_tales
+			WHERE tale_id = '".$this->user->current_tale."'";
+
+		$previous_authors = DB::instance(DB_NAME)->select_rows($q);
+
 		echo '<pre>';
 		print_r($tale);
-		echo '<pre>';
+		echo '</pre>';
 
 		#check to see if this is the 4th and final part of the story
 		if($tale[0]['place'] == 4){
@@ -104,7 +116,7 @@ class tales_controller extends base_controller {
 
 		}
 		else{
-
+			
 			#prepare user_tale to be inserted 
 			$user_tale = Array(
 				"content" => $_POST['content'],
@@ -112,9 +124,6 @@ class tales_controller extends base_controller {
 				"user_id" => $this->user->user_id,
 				"section" => $tale[0]['place']);
 			
-			echo '<pre>';
-			print_r($user_tale);
-			echo '<pre>';
 
 			DB::instance(DB_NAME)->insert('users_tales', $user_tale);
 
@@ -125,9 +134,6 @@ class tales_controller extends base_controller {
 				WHERE email = '".$_POST['email_next']."'";
 
 			$next_author = DB::instance(DB_NAME)->select_rows($q);
-			echo '<pre>';
-			print_r($next_author);
-			echo '<pre>';
 
 			#set previous author's current_tale to NULL
 			$last_author = $tale[0]['current_author'];
