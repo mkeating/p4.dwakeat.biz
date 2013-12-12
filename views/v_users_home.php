@@ -20,7 +20,12 @@
 		<label for='email_next'>Pass it along</label>
 		<input type='text' name='email_next' class="form-control" placeholder='Email of who to pass along to'>
 	</div>
+	<?php if(isset($error)): ?>
+		<div class='error'>
+			That user is already working on a story. Pick someone else. 
+		</div>
 	<br>
+	<?php endif; ?>
 	<button type='submit' class='btn btn-default'>Submit</button>
 </form>
 <?php else: ?>
@@ -41,9 +46,15 @@
 		<br>
 		<!-- Need a check here to see if the Tale is at section=3, if so, omit pass it along field -->
 		<?php if(isset($email_form)) echo $email_form; ?>
-		
 		<br>
+		<?php if(isset($error)): ?>
+			<div class='error'>
+				That user has already contributed to this story. Pick someone else. 
+			</div>
+			<br>
+
+	<?php endif; ?>
 		<button type='submit' class='btn btn-default'>Submit</button>
 	</form>
 
-<?php endif ?>
+<?php endif; ?>

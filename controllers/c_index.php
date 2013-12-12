@@ -13,6 +13,11 @@ class index_controller extends base_controller {
 	Accessed via http://localhost/index/index/
 	-------------------------------------------------------------------------------------------------*/
 	public function index() {
+
+		#logged in users get rerouted to home
+		if($this->user){
+			Router::redirect('/users/home');
+		}
 		
 		# Any method that loads a view will commonly start with this
 		# First, set the content of the template with a view file
