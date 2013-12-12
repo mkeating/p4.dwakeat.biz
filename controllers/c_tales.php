@@ -72,7 +72,7 @@ class tales_controller extends base_controller {
 
 		$subject = $this->user->name." wants to write with you!";
 
-		$body = "Hi ".$next_author[0]['name'].",\n".$this->user->name." would like you to continue their story ".$_POST["title"]."!\n 
+		$body = "Hi ".$next_author[0]['name'].",\n".$this->user->name." would like you to continue their story ".$tale[0]['title']."!\n 
 		Log in at http://localhost/ to start writing.";
 		$cc  = "";
 		$bcc = "";
@@ -104,6 +104,7 @@ class tales_controller extends base_controller {
 		$tale = DB::instance(DB_NAME)->select_rows($q);
 
 
+
 		#check to see if this is the 4th and final part of the story
 		if($tale[0]['place'] == 4){
 
@@ -126,7 +127,50 @@ class tales_controller extends base_controller {
 			DB::instance(DB_NAME)->update("tales", $update_tale, "WHERE tale_id = '".$tale[0]['tale_id']."'");
 
 			# send an email to all authors
+			#get all authors on the story
+			$q = "SELECT *
+				FROM users_tales
+				WHERE tale_id = '".$tale[0]['tale_id']."'";
 
+			$all_authors = DB::instance(DB_NAME)->select_rows($q);
+			$all_authors_ids = [];
+
+			foreach ($all_authors as $key => $value) {
+				array_push($all_authors_ids, $value['user_id']);
+			}
+
+			#build and send an email to each author
+			foreach($all_authors_ids as $key => $value){
+
+				$this_author_q = "SELECT *
+					FROM users
+					WHERE user_id = ".$value;
+
+				$this_author = DB::instance(DB_NAME)->select_rows($this_author_q);	
+
+				$name = $this_author[0]['name'];
+				$email = $this_author[0]['email'];
+
+				$to[] = Array(
+					"name" => $name,
+					"email" => $email);
+
+				$from = Array(
+					"name" => APP_NAME,
+					"email" => APP_EMAIL);
+
+				$subject = $tale[0]['title']." is finished!";
+
+				$body = $tale[0]['title']." is finished! Read it here: [library URL]";
+				$cc  = "";
+				$bcc = "";
+
+				$email = Email::send($to, $from, $subject, $body, true, $cc, $bcc);
+				unset($to);
+				
+			}
+			
+			
 
 		}
 		else{
@@ -156,7 +200,7 @@ class tales_controller extends base_controller {
 
 			#prepare user_tale to be inserted 
 			$user_tale = Array(
-				"content" => $content,
+				"content" => $_POST['content'],
 				"tale_id" => $this->user->current_tale,
 				"user_id" => $this->user->user_id,
 				"section" => $tale[0]['place']);
@@ -195,7 +239,7 @@ class tales_controller extends base_controller {
 
 			$subject = $this->user->name." wants to write with you!";
 
-			$body = "Hi ".$next_author[0]['name'].",\n".$this->user->name." would like you to continue their story ".$_POST["title"]."!\n 
+			$body = "Hi ".$next_author[0]['name'].",\n".$this->user->name." would like you to continue their story ".$tale[0]["title"]."!\n 
 			Log in at http://localhost/ to start writing.";
 			$cc  = "";
 			$bcc = "";
