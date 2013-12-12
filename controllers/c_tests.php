@@ -29,7 +29,7 @@ class tests_controller extends base_controller {
 		
 			$q = "SELECT *
 				FROM users 
-				WHERE email = '".$_POST['email_next']."'";
+				WHERE email = '".$_POST['email']."'";
 
 			$next_author = DB::instance(DB_NAME)->select_rows($q);
 
@@ -56,6 +56,43 @@ class tests_controller extends base_controller {
 				
 			}
 		
+	}
+
+	public function sendemail($error = NULL){
+
+		# displays this test 
+
+		# setup view
+			$this->template->content = View::instance('v_tests_sendemail');
+			$this->template->title = "test";
+
+		# Pass data to the view
+		$this->template->content->error = $error;
+
+		# render
+			echo $this->template;
+
+	}
+
+	public function p_sendemail($error = NULL){
+
+
+		$to[] = Array(
+			"name" => "Recipient",
+			"email" => $_POST['email']);
+
+		$from = Array(
+			"name" => APP_NAME,
+			"email" => APP_EMAIL);
+
+		$subject = "Hi from HumbleTales";
+
+		$body = "Hi B)";
+		$cc  = "";
+		$bcc = "";
+
+		$email = Email::send($to, $from, $subject, $body, true, $cc, $bcc);
+
 	}
 		
 	

@@ -61,6 +61,24 @@ class tales_controller extends base_controller {
 		$update = Array("current_tale" => $id[0]['tale_id']);
 		DB::instance(DB_NAME)->update("users", $update, "WHERE user_id = '".$next_author[0]['user_id']."'");
 
+		#send email to next author (no opt out functionality currently)
+		$to[] = Array(
+			"name" => $next_author[0]['name'],
+			"email" => $next_author[0]['email']);
+
+		$from = Array(
+			"name" => APP_NAME,
+			"email" => APP_EMAIL);
+
+		$subject = $this->user->name." wants to write with you!";
+
+		$body = "Hi ".$next_author[0]['name'].",\n".$this->user->name." would like you to continue their story ".$_POST["title"]."!\n 
+		Log in at http://localhost/ to start writing.";
+		$cc  = "";
+		$bcc = "";
+
+		$email = Email::send($to, $from, $subject, $body, true, $cc, $bcc);
+
 		#redirect
 		Router::redirect('/users/home');
 		
@@ -108,6 +126,7 @@ class tales_controller extends base_controller {
 			DB::instance(DB_NAME)->update("tales", $update_tale, "WHERE tale_id = '".$tale[0]['tale_id']."'");
 
 			# send an email to all authors
+
 
 		}
 		else{
@@ -165,7 +184,24 @@ class tales_controller extends base_controller {
 			DB::instance(DB_NAME)->update("users", $update_next_author, "WHERE user_id = '".$next_author[0]['user_id']."'");
 			}
 			
-			#send email to next_author
+			#send email to next author (no opt out functionality currently)
+			$to[] = Array(
+				"name" => $next_author[0]['name'],
+				"email" => $next_author[0]['email']);
+
+			$from = Array(
+				"name" => APP_NAME,
+				"email" => APP_EMAIL);
+
+			$subject = $this->user->name." wants to write with you!";
+
+			$body = "Hi ".$next_author[0]['name'].",\n".$this->user->name." would like you to continue their story ".$_POST["title"]."!\n 
+			Log in at http://localhost/ to start writing.";
+			$cc  = "";
+			$bcc = "";
+
+			$email = Email::send($to, $from, $subject, $body, true, $cc, $bcc);
+			
 
 			#redirect
 			Router::redirect('/users/home');

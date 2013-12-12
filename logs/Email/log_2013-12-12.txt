@@ -1,0 +1,99 @@
+2013-12-12 11:13:11 - INFO --> -------------------------- 
+2013-12-12 11:13:11 - INFO --> Controller/Method: tests/p_sendemail 
+2013-12-12 11:13:12 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY webmaster@humbletales.com 
+2013-12-12 11:13:12 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-12 11:13:12 - INFO --> To: R (R), m (m),  
+2013-12-12 11:13:12 - INFO --> CC:  
+2013-12-12 11:13:12 - INFO --> BCC:  
+2013-12-12 11:13:12 - INFO --> Subject: Hi from HumbleTales 
+2013-12-12 11:13:12 - INFO --> Body: Hi B) 
+2013-12-12 11:13:12 - INFO --> FAILED TO SEND EMAIL 
+2013-12-12 11:21:19 - INFO --> -------------------------- 
+2013-12-12 11:21:19 - INFO --> Controller/Method: tests/p_sendemail 
+2013-12-12 11:21:19 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-12 11:21:19 - INFO --> To: R (R), m (m),  
+2013-12-12 11:21:19 - INFO --> CC:  
+2013-12-12 11:21:19 - INFO --> BCC:  
+2013-12-12 11:21:19 - INFO --> Subject: Hi from HumbleTales 
+2013-12-12 11:21:19 - INFO --> Body: Hi B) 
+2013-12-12 11:21:19 - INFO --> FAILED TO SEND EMAIL 
+2013-12-12 11:46:04 - INFO --> -------------------------- 
+2013-12-12 11:46:04 - INFO --> Controller/Method: tests/p_sendemail 
+2013-12-12 11:46:04 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-12 11:46:04 - INFO --> To: Recipient (mkeating2225@gmail.com),  
+2013-12-12 11:46:04 - INFO --> CC:  
+2013-12-12 11:46:04 - INFO --> BCC:  
+2013-12-12 11:46:04 - INFO --> Subject: Hi from HumbleTales 
+2013-12-12 11:46:04 - INFO --> Body: Hi B) 
+2013-12-12 11:46:04 - INFO --> FAILED TO SEND EMAIL 
+2013-12-12 11:46:25 - INFO --> -------------------------- 
+2013-12-12 11:46:25 - INFO --> Controller/Method: tests/p_sendemail 
+2013-12-12 11:46:25 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-12 11:46:25 - INFO --> To: Recipient (mkeating2225@gmail.com),  
+2013-12-12 11:46:25 - INFO --> CC:  
+2013-12-12 11:46:25 - INFO --> BCC:  
+2013-12-12 11:46:25 - INFO --> Subject: Hi from HumbleTales 
+2013-12-12 11:46:25 - INFO --> Body: Hi B) 
+2013-12-12 11:46:25 - INFO --> FAILED TO SEND EMAIL 
+2013-12-12 11:52:18 - INFO --> -------------------------- 
+2013-12-12 11:52:18 - INFO --> Controller/Method: tests/p_sendemail 
+2013-12-12 11:52:18 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-12 11:52:18 - INFO --> To: Recipient (mkeating2225@gmail.com),  
+2013-12-12 11:52:18 - INFO --> CC:  
+2013-12-12 11:52:18 - INFO --> BCC:  
+2013-12-12 11:52:18 - INFO --> Subject: Hi from HumbleTales 
+2013-12-12 11:52:18 - INFO --> Body: Hi B) 
+2013-12-12 11:52:18 - INFO --> FAILED TO SEND EMAIL 
+2013-12-12 11:53:49 - INFO --> -------------------------- 
+2013-12-12 11:53:49 - INFO --> Controller/Method: tests/p_sendemail 
+2013-12-12 11:53:49 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-12 11:53:49 - INFO --> To: Recipient (mkeating2225@gmail.com),  
+2013-12-12 11:53:49 - INFO --> CC:  
+2013-12-12 11:53:49 - INFO --> BCC:  
+2013-12-12 11:53:49 - INFO --> Subject: Hi from HumbleTales 
+2013-12-12 11:53:49 - INFO --> Body: Hi B) 
+2013-12-12 12:40:52 - INFO --> -------------------------- 
+2013-12-12 12:40:52 - INFO --> Controller/Method: tales/p_new 
+2013-12-12 12:40:52 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-12 12:40:52 - INFO --> To: keat (),  
+2013-12-12 12:40:52 - INFO --> CC:  
+2013-12-12 12:40:52 - INFO --> BCC:  
+2013-12-12 12:40:52 - INFO --> Subject: Hi from HumbleTales 
+2013-12-12 12:40:52 - INFO --> Body: Hi keat,
+tester1 would like you to continue their story Testing Email!
+ 
+		Log in at http://localhost/ to start writing. 
+2013-12-12 12:40:52 - INFO --> FAILED TO SEND EMAIL 
+2013-12-12 12:48:05 - INFO --> -------------------------- 
+2013-12-12 12:48:05 - INFO --> Controller/Method: tales/p_new 
+2013-12-12 12:48:05 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-12 12:48:05 - INFO --> To: keat (mkeating2225@gmail.com),  
+2013-12-12 12:48:05 - INFO --> CC:  
+2013-12-12 12:48:05 - INFO --> BCC:  
+2013-12-12 12:48:05 - INFO --> Subject: Hi from HumbleTales 
+2013-12-12 12:48:05 - INFO --> Body: Hi keat,
+tester1 would like you to continue their story Testing Email!
+ 
+		Log in at http://localhost/ to start writing. 
+2013-12-12 13:11:07 - INFO --> -------------------------- 
+2013-12-12 13:11:07 - INFO --> Controller/Method: tales/p_new 
+2013-12-12 13:11:07 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-12 13:11:07 - INFO --> To: tester1 (humbletales@gmail.com),  
+2013-12-12 13:11:07 - INFO --> CC:  
+2013-12-12 13:11:07 - INFO --> BCC:  
+2013-12-12 13:11:07 - INFO --> Subject: keat wants to write with you! 
+2013-12-12 13:11:07 - INFO --> Body: Hi tester1,
+keat would like you to continue their story Testign Email 2!
+ 
+		Log in at http://localhost/ to start writing. 
+2013-12-12 13:13:09 - INFO --> -------------------------- 
+2013-12-12 13:13:09 - INFO --> Controller/Method: tales/p_continue 
+2013-12-12 13:13:09 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-12 13:13:09 - INFO --> To: tester2 (humbletales2@gmail.com),  
+2013-12-12 13:13:09 - INFO --> CC:  
+2013-12-12 13:13:09 - INFO --> BCC:  
+2013-12-12 13:13:09 - INFO --> Subject: tester1 wants to write with you! 
+2013-12-12 13:13:09 - INFO --> Body: Hi tester2,
+tester1 would like you to continue their story !
+ 
+			Log in at http://localhost/ to start writing. 
