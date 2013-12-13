@@ -54,6 +54,18 @@ class library_controller extends base_controller {
 			echo $value['content'];
 		}
 
+		echo "<h1>Written by:</h1>";
+		foreach($tale as $key => $value){
+
+			$user_q = "SELECT *
+				FROM users
+				WHERE user_id = ".$value['user_id'];
+
+			$user = DB::instance(DB_NAME)->select_rows($user_q);
+			echo $user;
+
+		}
+
 
 	}
 

@@ -31,7 +31,7 @@ A email designated to receive messages from the server. Examples:
 	define('SYSTEM_EMAIL', 'webmaster@humbletales.com'); 
 
 # Default DB name for this app
-	define('DB_NAME', "p4_dwakeat_biz"); 
+	define('DB_NAME', "dwakeatb_p4_dwakeat_biz"); 
 
 # Timezone
 	define('TIMEZONE', 'America/New_York');
@@ -43,5 +43,5 @@ A email designated to receive messages from the server. Examples:
 	//define('SMTP_PASSWORD', '');
 
 # For extra security, you might want to set different salts than what the core uses
-	define('PASSWORD_SALT', 'lkjlkjhlkjhlkjhlkjhlkjhlkjhhkjl');
-	define('TOKEN_SALT', 'asdfasdfasdfasdfasdfasdfasdfasdf');
+	#define('PASSWORD_SALT', 'lkjlkjhlkjhlkjhlkjhlkjhlkjhhkjl');
+	#define('TOKEN_SALT', 'asdfasdfasdfasdfasdfasdfasdfasdf');
