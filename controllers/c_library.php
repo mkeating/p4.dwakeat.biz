@@ -19,9 +19,13 @@ class library_controller extends base_controller {
 		$all_tales = DB::instance(DB_NAME)->select_rows($all_tales_q);
 
 		foreach($all_tales as $tale => $value){
-			echo "<pre>";
-			print_r($value['title']);
-			echo "</pre>";
+			
+			$link = "/library/tale/".$value['tale_id'];
+
+			echo $link."<br>";
+
+			echo "<a href=".$link.">".$value['title']."</a><br>";
+
 		}	
 		
 	}
@@ -36,11 +40,20 @@ class library_controller extends base_controller {
 
 		$tale = DB::instance(DB_NAME)->select_rows($tale_q);
 
-		echo "<pre>";
-		print_r($tale);
-		echo "</pre>";
+		$title_q = "SELECT title
+			FROM tales
+			WHERE tale_id = ".$tale_id;
+
+		$title = DB::instance(DB_NAME)->select_field($title_q);
+		echo "<h1>".$title."</h1>";
 
 		
+		#this loop need to go in section order
+		foreach($tale as $key => $value){
+			
+			echo $value['content'];
+		}
+
 
 	}
 
@@ -61,10 +74,6 @@ class library_controller extends base_controller {
 			WHERE tale_id = ".$value['tale_id'];
 
 			$tale_link = DB::instance(DB_NAME)->select_rows($tale_q);
-
-			echo "<pre>";
-			print_r($tale_link);
-			echo "</pre>";
 
 			$link = "/library/tale/".$tale_link[0]['tale_id'];
 
