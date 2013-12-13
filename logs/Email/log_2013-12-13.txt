@@ -76,3 +76,16 @@ keat would like you to join HumbleTales!
 
 			http://localhost/users/referal/18 
 2013-12-13 13:41:11 - INFO --> FAILED TO SEND EMAIL 
+2013-12-13 13:49:28 - INFO --> -------------------------- 
+2013-12-13 13:49:28 - INFO --> Controller/Method: tales/p_new 
+2013-12-13 13:49:28 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-13 13:49:28 - INFO --> To: Friend (humbletalesstrange@gmail.com),  
+2013-12-13 13:49:28 - INFO --> CC:  
+2013-12-13 13:49:28 - INFO --> BCC:  
+2013-12-13 13:49:28 - INFO --> Subject: keat wants to write with you! 
+2013-12-13 13:49:28 - INFO --> Body: Hi there,
+keat would like you to join HumbleTales!
+
+			Go here to sign up, and you'll be taken right to keat's story.
+
+			http://localhost/users/referal/19 

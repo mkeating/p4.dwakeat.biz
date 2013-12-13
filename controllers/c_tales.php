@@ -45,7 +45,7 @@ class tales_controller extends base_controller {
 			#send email to next author (no opt out functionality currently)
 			$to[] = Array(
 				"name" => "Friend",
-				"email" => $_POST['email']);
+				"email" => $_POST['email_next']);
 
 			$from = Array(
 				"name" => APP_NAME,
