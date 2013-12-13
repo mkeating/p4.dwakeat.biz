@@ -1,0 +1,78 @@
+2013-12-13 10:42:14 - INFO --> -------------------------- 
+2013-12-13 10:42:14 - INFO --> Controller/Method: tales/p_new 
+2013-12-13 10:42:14 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-13 10:42:14 - INFO --> To: tester1 (humbletales@gmail.com),  
+2013-12-13 10:42:14 - INFO --> CC:  
+2013-12-13 10:42:14 - INFO --> BCC:  
+2013-12-13 10:42:14 - INFO --> Subject: keat wants to write with you! 
+2013-12-13 10:42:14 - INFO --> Body: Hi tester1,
+keat would like you to continue their story !
+ 
+		Log in at http://localhost/ to start writing. 
+2013-12-13 13:05:45 - INFO --> -------------------------- 
+2013-12-13 13:05:45 - INFO --> Controller/Method: tales/p_new 
+2013-12-13 13:05:45 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-13 13:05:45 - INFO --> To:  (),  
+2013-12-13 13:05:45 - INFO --> CC:  
+2013-12-13 13:05:45 - INFO --> BCC:  
+2013-12-13 13:05:45 - INFO --> Subject: keat wants to write with you! 
+2013-12-13 13:05:45 - INFO --> Body: Hi there,
+keat would like you to join HumbleTales!
+
+			Go here to sign up, and you'll be taken right to keat's story.
+
+			http://localhost/users/referal/15 
+2013-12-13 13:05:45 - INFO --> FAILED TO SEND EMAIL 
+2013-12-13 13:29:50 - INFO --> -------------------------- 
+2013-12-13 13:29:50 - INFO --> Controller/Method: tales/p_new 
+2013-12-13 13:29:50 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-13 13:29:50 - INFO --> To:  (),  
+2013-12-13 13:29:50 - INFO --> CC:  
+2013-12-13 13:29:50 - INFO --> BCC:  
+2013-12-13 13:29:50 - INFO --> Subject: keat wants to write with you! 
+2013-12-13 13:29:50 - INFO --> Body: Hi there,
+keat would like you to join HumbleTales!
+
+			Go here to sign up, and you'll be taken right to keat's story.
+
+			http://localhost/users/referal/16 
+2013-12-13 13:29:50 - INFO --> FAILED TO SEND EMAIL 
+2013-12-13 13:35:06 - INFO --> -------------------------- 
+2013-12-13 13:35:06 - INFO --> Controller/Method: tales/p_new 
+2013-12-13 13:35:06 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-13 13:35:06 - INFO --> To:  (),  
+2013-12-13 13:35:06 - INFO --> CC:  
+2013-12-13 13:35:06 - INFO --> BCC:  
+2013-12-13 13:35:06 - INFO --> Subject: keat wants to write with you! 
+2013-12-13 13:35:06 - INFO --> Body: Hi there,
+keat would like you to join HumbleTales!
+
+			Go here to sign up, and you'll be taken right to keat's story.
+
+			http://localhost/users/referal/17 
+2013-12-13 13:35:06 - INFO --> FAILED TO SEND EMAIL 
+2013-12-13 13:36:20 - INFO --> -------------------------- 
+2013-12-13 13:36:20 - INFO --> Controller/Method: tales/p_continue 
+2013-12-13 13:36:20 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-13 13:36:20 - INFO --> To: tester1 (humbletales@gmail.com),  
+2013-12-13 13:36:20 - INFO --> CC:  
+2013-12-13 13:36:20 - INFO --> BCC:  
+2013-12-13 13:36:20 - INFO --> Subject: Hugo wants to write with you! 
+2013-12-13 13:36:20 - INFO --> Body: Hi tester1,
+Hugo would like you to continue their story referal take 3!
+ 
+			Log in at http://localhost/ to start writing. 
+2013-12-13 13:41:11 - INFO --> -------------------------- 
+2013-12-13 13:41:11 - INFO --> Controller/Method: tales/p_new 
+2013-12-13 13:41:11 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-13 13:41:11 - INFO --> To: Friend (),  
+2013-12-13 13:41:11 - INFO --> CC:  
+2013-12-13 13:41:11 - INFO --> BCC:  
+2013-12-13 13:41:11 - INFO --> Subject: keat wants to write with you! 
+2013-12-13 13:41:11 - INFO --> Body: Hi there,
+keat would like you to join HumbleTales!
+
+			Go here to sign up, and you'll be taken right to keat's story.
+
+			http://localhost/users/referal/18 
+2013-12-13 13:41:11 - INFO --> FAILED TO SEND EMAIL 

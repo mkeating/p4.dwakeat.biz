@@ -56,7 +56,7 @@ class users_controller extends base_controller {
 
 		setcookie("token", $_POST['token'], strtotime('+2 weeks'), '/');
 
-		# redirect to 'Find People'
+		# redirect to home
 		Router::redirect('/users/home');
 		
 	}
@@ -124,6 +124,83 @@ class users_controller extends base_controller {
 
 		#send back to main index
 		Router::redirect("/");
+	}
+
+	#processing sign up from email referral
+	public function referal($tale_id, $error = NULL){
+
+		# displays signup 
+
+		# setup view
+			$this->template->content = View::instance('v_users_referal');
+			$this->template->title = "Sign up";
+			$this->template->content->tale_id = $tale_id;
+
+		# Pass data to the view
+		$this->template->content->error = $error;
+
+		# render
+			echo $this->template;
+	}
+
+	public function p_referal($tale_id){
+
+		#i should add a check to see if the tale exists
+
+		#check for empty fields
+		foreach($_POST as $field => $value){
+			if(empty($value)){
+				Router::redirect('/users/signup/empty-fields');
+			}
+		}
+
+		#check for duplicate email
+		if ($this->userObj->confirm_unique_email($_POST['email']) == false){
+			#send back to signup page
+			Router::redirect("/users/signup/duplicate");
+		}
+
+		#adding data to the user
+		$_POST['created'] = Time::now();
+		$_POST['modified'] = Time::now();
+
+		#encrypt password
+		$_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
+
+		#create encrypted token via email and a random string
+		$_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
+
+		#assign the user to the referred story
+		$_POST['current_tale'] = $tale_id;
+
+		#Insert into the db
+		$user_id = DB::instance(DB_NAME)->insert('users', $_POST);
+
+		#get this user's ID, set as current author for this tale
+
+		$q = "SELECT user_id
+		FROM users
+		WHERE email = '".$_POST['email']."'";
+		$id = DB::instance(DB_NAME)->select_field($q);
+
+		$t = "SELECT *
+		FROM tales
+		WHERE tale_id = ".$tale_id;
+
+		$tale = DB::instance(DB_NAME)->select_rows($t);
+
+		$data = Array(
+			"current_author" => $id);
+
+		$update_tale = DB::instance(DB_NAME)->update("tales", $data, "WHERE tale_id = '".$tale_id."'");
+
+
+		# log in the new user
+
+		setcookie("token", $_POST['token'], strtotime('+2 weeks'), '/');
+
+		# redirect to home
+		Router::redirect('/users/home');
 	}
 	
 
