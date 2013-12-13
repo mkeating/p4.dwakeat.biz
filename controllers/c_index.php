@@ -14,7 +14,9 @@ class index_controller extends base_controller {
 	-------------------------------------------------------------------------------------------------*/
 	public function index() {
 
-		#logged in users get rerouted to home
+
+		echo "lol";
+		/*#logged in users get rerouted to home
 		if($this->user){
 			Router::redirect('/users/home');
 		}
@@ -37,7 +39,7 @@ class index_controller extends base_controller {
 	      					     		
 		# Render the view
 			echo $this->template;
-
+*/
 	} # End of method
 	
 	
