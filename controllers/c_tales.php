@@ -18,68 +18,115 @@ class tales_controller extends base_controller {
 			}
 		}
 
-		#get the next user(assumes user already exists, for now)
+		#get the next user
 
-		$q = "SELECT *
+		#check to see if user already exists
+		if ($this->userObj->confirm_unique_email($_POST['email_next']) == true){
+
+			#prepare Tale to be inserted
+			$tale = Array(
+				"title" => $_POST["title"],
+				"current_author" => $this->user->user_id,
+				"place" => 2);
+			
+
+			#insert new Tale, get its ID for next step
+			DB::instance(DB_NAME)->insert('tales', $tale);
+
+			#get the new tale's id
+
+			$q = "SELECT tale_id
+			FROM tales
+			WHERE title = '".$_POST["title"]."'";
+
+			$tale_id = DB::instance(DB_NAME)->select_field($q);
+			
+			# send referal email
+			#send email to next author (no opt out functionality currently)
+			$to[] = Array(
+				"name" => "Friend",
+				"email" => $_POST['email_next']);
+
+			$from = Array(
+				"name" => APP_NAME,
+				"email" => APP_EMAIL);
+
+			$subject = $this->user->name." wants to write with you!";
+
+			$body = "Hi there,\n".$this->user->name." would like you to join HumbleTales!
+
+			Go here to sign up, and you'll be taken right to ".$this->user->name."'s story.\n
+			http://localhost/users/referal/".$tale_id;
+			
+			$cc  = "";
+			$bcc = "";
+
+			$email = Email::send($to, $from, $subject, $body, true, $cc, $bcc);
+		}
+
+		else{
+
+			$q = "SELECT *
 			FROM users 
 			WHERE email = '".$_POST['email_next']."'";
 
-		$next_author = DB::instance(DB_NAME)->select_rows($q);
+			$next_author = DB::instance(DB_NAME)->select_rows($q);
 
-		#check to see if next_user is already working on a story
-		if($next_author[0]['current_tale']){
-			#preserves their content
-			$content = $_POST['content'];
-			Router::redirect("/users/home/duplicate");
+			#check to see if next_user is already working on a story
+			if($next_author[0]['current_tale']){
+				#preserves their content
+				$content = $_POST['content'];
+				Router::redirect("/users/home/duplicate");
+			}
+			
+			
+			#prepare Tale to be inserted
+			$tale = Array(
+				"title" => $_POST["title"],
+				"current_author" => $next_author[0]['user_id'],
+				"place" => 2);
+			
+
+			#insert new Tale, get its ID for next step
+			DB::instance(DB_NAME)->insert('tales', $tale);
+			$q2 = "SELECT tale_id
+				FROM tales
+				WHERE tales.current_author = ".intval($next_author[0]['user_id']);
+			$id = DB::instance(DB_NAME)->select_rows($q2);
+
+			#prepare user_tale to be inserted 
+			$user_tale = Array(
+				"content" => $_POST['content'],
+				"tale_id" => $id[0]['tale_id'],
+				"user_id" => $this->user->user_id,
+				"section" => 1);
+			
+			DB::instance(DB_NAME)->insert('users_tales', $user_tale);
+
+			# set current tale for next author
+			$update = Array("current_tale" => $id[0]['tale_id']);
+			DB::instance(DB_NAME)->update("users", $update, "WHERE user_id = '".$next_author[0]['user_id']."'");
+
+			#send email to next author (no opt out functionality currently)
+			$to[] = Array(
+				"name" => $next_author[0]['name'],
+				"email" => $next_author[0]['email']);
+
+			$from = Array(
+				"name" => APP_NAME,
+				"email" => APP_EMAIL);
+
+			$subject = $this->user->name." wants to write with you!";
+
+			$body = "Hi ".$next_author[0]['name'].",\n".$this->user->name." would like you to continue their story ".$tale[0]['title']."!\n 
+			Log in at http://localhost/ to start writing.";
+			$cc  = "";
+			$bcc = "";
+
+			$email = Email::send($to, $from, $subject, $body, true, $cc, $bcc);
 		}
-		
-		
-		#prepare Tale to be inserted
-		$tale = Array(
-			"title" => $_POST["title"],
-			"current_author" => $next_author[0]['user_id'],
-			"place" => 2);
-		
 
-		#insert new Tale, get its ID for next step
-		DB::instance(DB_NAME)->insert('tales', $tale);
-		$q2 = "SELECT tale_id
-			FROM tales
-			WHERE tales.current_author = ".intval($next_author[0]['user_id']);
-		$id = DB::instance(DB_NAME)->select_rows($q2);
-
-		#prepare user_tale to be inserted 
-		$user_tale = Array(
-			"content" => $_POST['content'],
-			"tale_id" => $id[0]['tale_id'],
-			"user_id" => $this->user->user_id,
-			"section" => 1);
-		
-		DB::instance(DB_NAME)->insert('users_tales', $user_tale);
-
-		# set current tale for next author
-		$update = Array("current_tale" => $id[0]['tale_id']);
-		DB::instance(DB_NAME)->update("users", $update, "WHERE user_id = '".$next_author[0]['user_id']."'");
-
-		#send email to next author (no opt out functionality currently)
-		$to[] = Array(
-			"name" => $next_author[0]['name'],
-			"email" => $next_author[0]['email']);
-
-		$from = Array(
-			"name" => APP_NAME,
-			"email" => APP_EMAIL);
-
-		$subject = $this->user->name." wants to write with you!";
-
-		$body = "Hi ".$next_author[0]['name'].",\n".$this->user->name." would like you to continue their story ".$tale[0]['title']."!\n 
-		Log in at http://localhost/ to start writing.";
-		$cc  = "";
-		$bcc = "";
-
-		$email = Email::send($to, $from, $subject, $body, true, $cc, $bcc);
-
-		#redirect
+		#Send them back home (needs a message like "story sent")
 		Router::redirect('/users/home');
 		
 	}
