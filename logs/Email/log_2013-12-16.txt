@@ -1,0 +1,27 @@
+2013-12-16 18:30:41 - INFO --> -------------------------- 
+2013-12-16 18:30:41 - INFO --> Controller/Method: users/p_login 
+2013-12-16 18:30:41 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-16 18:30:41 - INFO --> To: HumbleTales (webmaster@humbletales.com),  
+2013-12-16 18:30:41 - INFO --> CC:  
+2013-12-16 18:30:41 - INFO --> BCC:  
+2013-12-16 18:30:41 - INFO --> Subject: HumbleTales SQL Error 
+2013-12-16 18:30:41 - INFO --> Body: <h2>SQL Error</h2>Access denied for user 'dwakeatb_p4'@'localhost' (using password: YES)<h2>Query History</h2><h2>Routed Controller/Method:</h2> users/p_login<br/><h2>Cookies</h2><pre>Array
+(
+    [PHPSESSID] => kcuga3n59r0gkv1isc3callmc4
+)
+</pre><h2>POST</h2><pre>Array
+(
+    [email] => mkeating2225@ 
+2013-12-16 18:30:42 - INFO --> FAILED TO SEND EMAIL 
+2013-12-16 20:14:45 - INFO --> -------------------------- 
+2013-12-16 20:14:45 - INFO --> Controller/Method: tales/p_new 
+2013-12-16 20:14:45 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-16 20:14:45 - INFO --> To: tester1 (humbletales@gmail.com),  
+2013-12-16 20:14:45 - INFO --> CC:  
+2013-12-16 20:14:45 - INFO --> BCC:  
+2013-12-16 20:14:45 - INFO --> Subject: keat wants to write with you! 
+2013-12-16 20:14:45 - INFO --> Body: Hi tester1,
+keat would like you to continue their story !
+ 
+			Log in at http://localhost/ to start writing. 
+2013-12-16 20:14:46 - INFO --> FAILED TO SEND EMAIL 

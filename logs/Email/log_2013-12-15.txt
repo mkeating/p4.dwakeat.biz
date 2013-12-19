@@ -1,0 +1,15 @@
+2013-12-15 15:35:11 - INFO --> -------------------------- 
+2013-12-15 15:35:11 - INFO --> Controller/Method: users/p_login 
+2013-12-15 15:35:11 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-15 15:35:11 - INFO --> To: HumbleTales (webmaster@humbletales.com),  
+2013-12-15 15:35:11 - INFO --> CC:  
+2013-12-15 15:35:11 - INFO --> BCC:  
+2013-12-15 15:35:11 - INFO --> Subject: HumbleTales SQL Error 
+2013-12-15 15:35:11 - INFO --> Body: <h2>SQL Error</h2>Access denied for user 'dwakeatb_p4'@'localhost' (using password: YES)<h2>Query History</h2><h2>Routed Controller/Method:</h2> users/p_login<br/><h2>Cookies</h2><pre>Array
+(
+    [PHPSESSID] => kcuga3n59r0gkv1isc3callmc4
+)
+</pre><h2>POST</h2><pre>Array
+(
+    [email] => mkeating2225@ 
+2013-12-15 15:35:12 - INFO --> FAILED TO SEND EMAIL 

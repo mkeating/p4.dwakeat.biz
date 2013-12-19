@@ -1,0 +1,42 @@
+/*this is too push down content to make room for navbar */
+.buffer{
+	min-height: 50px;
+
+}
+
+.storyfield{
+	width: 400px;
+	min-height: 300px;
+}
+
+.titlefield{
+	width: 400px;
+
+}
+
+
+.wordcounter{
+	height: 80%;
+	padding-top: 20%;
+}
+
+.display_title{
+	font-size: 3em;
+}
+
+.display_content{
+	font-size: 2em;
+}
+
+
+div{
+	border: 1px solid black;
+}
+
+.home_column{
+	min-height:100%;
+}
+
+.home_column img{
+	float:right;
+}
