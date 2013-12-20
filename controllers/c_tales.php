@@ -180,7 +180,7 @@ class tales_controller extends base_controller {
 				WHERE tale_id = '".$tale[0]['tale_id']."'";
 
 			$all_authors = DB::instance(DB_NAME)->select_rows($q);
-			$all_authors_ids = [];
+			$all_authors_ids;
 
 			foreach ($all_authors as $key => $value) {
 				array_push($all_authors_ids, $value['user_id']);
