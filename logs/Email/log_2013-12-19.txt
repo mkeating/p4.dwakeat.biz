@@ -1,0 +1,106 @@
+2013-12-19 21:44:16 - INFO --> -------------------------- 
+2013-12-19 21:44:16 - INFO --> Controller/Method: tales/p_new 
+2013-12-19 21:44:16 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-19 21:44:16 - INFO --> To: tester1 (humbletales@gmail.com),  
+2013-12-19 21:44:16 - INFO --> CC:  
+2013-12-19 21:44:16 - INFO --> BCC:  
+2013-12-19 21:44:16 - INFO --> Subject: keat wants to write with you! 
+2013-12-19 21:44:16 - INFO --> Body: Hi tester1,
+keat would like you to continue their story !
+ 
+			Log in at http://localhost/ to start writing. 
+2013-12-19 21:44:17 - INFO --> FAILED TO SEND EMAIL 
+2013-12-19 21:57:09 - INFO --> -------------------------- 
+2013-12-19 21:57:09 - INFO --> Controller/Method: tales/p_continue 
+2013-12-19 21:57:09 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-19 21:57:09 - INFO --> To: tester2 (humbletales2@gmail.com),  
+2013-12-19 21:57:09 - INFO --> CC:  
+2013-12-19 21:57:09 - INFO --> BCC:  
+2013-12-19 21:57:09 - INFO --> Subject: tester1 wants to write with you! 
+2013-12-19 21:57:09 - INFO --> Body: Hi tester2,
+tester1 would like you to continue their story first tale!
+ 
+			Log in at http://localhost/ to start writing. 
+2013-12-19 21:57:10 - INFO --> FAILED TO SEND EMAIL 
+2013-12-19 21:58:43 - INFO --> -------------------------- 
+2013-12-19 21:58:43 - INFO --> Controller/Method: tales/p_continue 
+2013-12-19 21:58:43 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-19 21:58:43 - INFO --> To: tester3 (humbletales3@gmail.com),  
+2013-12-19 21:58:43 - INFO --> CC:  
+2013-12-19 21:58:43 - INFO --> BCC:  
+2013-12-19 21:58:43 - INFO --> Subject: tester2 wants to write with you! 
+2013-12-19 21:58:43 - INFO --> Body: Hi tester3,
+tester2 would like you to continue their story first tale!
+ 
+			Log in at http://localhost/ to start writing. 
+2013-12-19 21:58:44 - INFO --> FAILED TO SEND EMAIL 
+2013-12-19 21:59:40 - INFO --> -------------------------- 
+2013-12-19 21:59:40 - INFO --> Controller/Method: tales/p_continue 
+2013-12-19 21:59:40 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-19 21:59:40 - INFO --> To: keat (mkeating2225@gmail.com),  
+2013-12-19 21:59:40 - INFO --> CC:  
+2013-12-19 21:59:40 - INFO --> BCC:  
+2013-12-19 21:59:40 - INFO --> Subject: first tale is finished! 
+2013-12-19 21:59:40 - INFO --> Body: first tale is finished! Read it here: [library URL] 
+2013-12-19 21:59:41 - INFO --> FAILED TO SEND EMAIL 
+2013-12-19 21:59:41 - INFO --> -------------------------- 
+2013-12-19 21:59:41 - INFO --> Controller/Method: tales/p_continue 
+2013-12-19 21:59:41 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-19 21:59:41 - INFO --> To: tester1 (humbletales@gmail.com),  
+2013-12-19 21:59:41 - INFO --> CC:  
+2013-12-19 21:59:41 - INFO --> BCC:  
+2013-12-19 21:59:41 - INFO --> Subject: first tale is finished! 
+2013-12-19 21:59:41 - INFO --> Body: first tale is finished! Read it here: [library URL] 
+2013-12-19 21:59:42 - INFO --> FAILED TO SEND EMAIL 
+2013-12-19 21:59:42 - INFO --> -------------------------- 
+2013-12-19 21:59:42 - INFO --> Controller/Method: tales/p_continue 
+2013-12-19 21:59:42 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-19 21:59:42 - INFO --> To: tester2 (humbletales2@gmail.com),  
+2013-12-19 21:59:42 - INFO --> CC:  
+2013-12-19 21:59:42 - INFO --> BCC:  
+2013-12-19 21:59:42 - INFO --> Subject: first tale is finished! 
+2013-12-19 21:59:42 - INFO --> Body: first tale is finished! Read it here: [library URL] 
+2013-12-19 21:59:43 - INFO --> FAILED TO SEND EMAIL 
+2013-12-19 21:59:43 - INFO --> -------------------------- 
+2013-12-19 21:59:43 - INFO --> Controller/Method: tales/p_continue 
+2013-12-19 21:59:43 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-19 21:59:43 - INFO --> To: tester3 (humbletales3@gmail.com),  
+2013-12-19 21:59:43 - INFO --> CC:  
+2013-12-19 21:59:43 - INFO --> BCC:  
+2013-12-19 21:59:43 - INFO --> Subject: first tale is finished! 
+2013-12-19 21:59:43 - INFO --> Body: first tale is finished! Read it here: [library URL] 
+2013-12-19 21:59:44 - INFO --> FAILED TO SEND EMAIL 
+2013-12-19 21:59:44 - INFO --> -------------------------- 
+2013-12-19 21:59:44 - INFO --> Controller/Method: tales/p_continue 
+2013-12-19 21:59:44 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-19 21:59:44 - INFO --> To:  (),  
+2013-12-19 21:59:44 - INFO --> CC:  
+2013-12-19 21:59:44 - INFO --> BCC:  
+2013-12-19 21:59:44 - INFO --> Subject: tester3 wants to write with you! 
+2013-12-19 21:59:44 - INFO --> Body: Hi ,
+tester3 would like you to continue their story first tale!
+ 
+			Log in at http://localhost/ to start writing. 
+2013-12-19 21:59:44 - INFO --> FAILED TO SEND EMAIL 
+2013-12-19 22:04:03 - INFO --> -------------------------- 
+2013-12-19 22:04:03 - INFO --> Controller/Method: tales/p_new 
+2013-12-19 22:04:03 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-19 22:04:03 - INFO --> To: tester1 (humbletales@gmail.com),  
+2013-12-19 22:04:03 - INFO --> CC:  
+2013-12-19 22:04:03 - INFO --> BCC:  
+2013-12-19 22:04:03 - INFO --> Subject: keat wants to write with you! 
+2013-12-19 22:04:03 - INFO --> Body: Hi tester1,
+keat would like you to continue their story !
+ 
+			Log in at http://localhost/ to start writing. 
+2013-12-19 22:11:31 - INFO --> -------------------------- 
+2013-12-19 22:11:31 - INFO --> Controller/Method: tales/p_new 
+2013-12-19 22:11:31 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-19 22:11:31 - INFO --> To: tester1 (humbletales@gmail.com),  
+2013-12-19 22:11:31 - INFO --> CC:  
+2013-12-19 22:11:31 - INFO --> BCC:  
+2013-12-19 22:11:31 - INFO --> Subject: keat wants to write with you! 
+2013-12-19 22:11:31 - INFO --> Body: Hi tester1,
+keat would like you to continue their story !
+ 
+			Log in at http://localhost/ to start writing. 

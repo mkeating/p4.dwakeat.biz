@@ -27,6 +27,8 @@ class library_controller extends base_controller {
 			echo "<a href=".$link.">".$value['title']."</a><br>";
 
 		}	
+
+
 		
 	}
 
@@ -36,7 +38,8 @@ class library_controller extends base_controller {
 
 		$tale_q = "SELECT *
 			FROM users_tales
-			WHERE tale_id = ".$tale_id;
+			WHERE tale_id = ".$tale_id." 
+			ORDER BY section";
 
 		$tale = DB::instance(DB_NAME)->select_rows($tale_q);
 
@@ -45,13 +48,12 @@ class library_controller extends base_controller {
 			WHERE tale_id = ".$tale_id;
 
 		$title = DB::instance(DB_NAME)->select_field($title_q);
-		echo "<h1>".$title."</h1>";
+		//echo "<h1>".$title."</h1>";
 
-		
-		#this loop need to go in section order
+		$story ="";
 		foreach($tale as $key => $value){
 			
-			echo $value['content'];
+			$story = $story."<div class=>".$value['content']."/div>";
 		}
 
 		echo "<h1>Written by:</h1>";
@@ -62,9 +64,12 @@ class library_controller extends base_controller {
 				WHERE user_id = ".$value['user_id'];
 
 			$user = DB::instance(DB_NAME)->select_rows($user_q);
-			echo $user;
+			echo $user[0]['name'];
 
 		}
+		# setup view
+		$this->template->content = View::instance('v_users_home');
+		$this->template->content->title = $title;
 
 
 	}
