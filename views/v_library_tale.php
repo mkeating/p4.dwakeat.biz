@@ -1,6 +1,6 @@
 
-<div class="col-lg-4 col-md-3 col-sm-0"></div>
-<div class="col-lg-3 col-md-4 col-sm-10">
+<div class="col-lg-3 col-md-3 col-sm-0"></div>
+<div class="col-lg-5 col-md-4 col-sm-10">
 			
 <!-- Display the content of the Tale -->
 
@@ -11,8 +11,17 @@
 	<div class = "display_content">
 		<?php if(isset($story)) echo $story; ?>
 	</div>
+
+
 </div>
-<div class="col-lg-3 col-md-3 col-sm-0">
+<div class="col-lg-2 col-md-3 col-sm-0">
+	<div>
+		Written by:<br>
+		<?php if(isset($writers)) echo $writers; ?>
+
+	</div>
 
 </div>
 <div class="col-lg-2 col-md-3 col-sm-0"></div>
+<script src="/js/tales.js"></script>
+

@@ -1,0 +1,44 @@
+2013-12-21 14:17:50 - INFO --> -------------------------- 
+2013-12-21 14:17:50 - INFO --> Controller/Method: tales/p_new 
+2013-12-21 14:17:50 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-21 14:17:50 - INFO --> To: tester1 (humbletales@gmail.com),  
+2013-12-21 14:17:50 - INFO --> CC:  
+2013-12-21 14:17:50 - INFO --> BCC:  
+2013-12-21 14:17:50 - INFO --> Subject: keat wants to write with you! 
+2013-12-21 14:17:50 - INFO --> Body: Hi tester1,
+keat would like you to continue their story !
+ 
+			Log in at http://localhost/ to start writing. 
+2013-12-21 14:24:54 - INFO --> -------------------------- 
+2013-12-21 14:24:54 - INFO --> Controller/Method: tales/p_new 
+2013-12-21 14:24:54 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-21 14:24:54 - INFO --> To: tester1 (humbletales@gmail.com),  
+2013-12-21 14:24:54 - INFO --> CC:  
+2013-12-21 14:24:54 - INFO --> BCC:  
+2013-12-21 14:24:54 - INFO --> Subject: keat wants to write with you! 
+2013-12-21 14:24:54 - INFO --> Body: Hi tester1,
+keat would like you to continue their story !
+ 
+			Log in at http://localhost/ to start writing. 
+2013-12-21 14:30:00 - INFO --> -------------------------- 
+2013-12-21 14:30:00 - INFO --> Controller/Method: tales/p_continue 
+2013-12-21 14:30:00 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-21 14:30:00 - INFO --> To: tester2 (humbletales2@gmail.com),  
+2013-12-21 14:30:00 - INFO --> CC:  
+2013-12-21 14:30:00 - INFO --> BCC:  
+2013-12-21 14:30:00 - INFO --> Subject: tester1 wants to write with you! 
+2013-12-21 14:30:00 - INFO --> Body: Hi tester2,
+tester1 would like you to continue their story tale to test library view!
+ 
+			Log in at http://localhost/ to start writing. 
+2013-12-21 14:33:47 - INFO --> -------------------------- 
+2013-12-21 14:33:47 - INFO --> Controller/Method: tales/p_continue 
+2013-12-21 14:33:47 - INFO --> From: HumbleTales (webmaster@humbletales.com) 
+2013-12-21 14:33:47 - INFO --> To: tester3 (humbletales3@gmail.com),  
+2013-12-21 14:33:47 - INFO --> CC:  
+2013-12-21 14:33:47 - INFO --> BCC:  
+2013-12-21 14:33:47 - INFO --> Subject: tester2 wants to write with you! 
+2013-12-21 14:33:47 - INFO --> Body: Hi tester3,
+tester2 would like you to continue their story tale to test library view!
+ 
+			Log in at http://localhost/ to start writing. 

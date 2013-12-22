@@ -3,7 +3,7 @@
 <!-- if no current Tale 
  form for New Tale -->
  <?php if($user->current_tale == NULL): ?>
-	 <p>Start a tale</p>
+	 <h1>Start a tale</h1>
 	 <div class="col-lg-4 col-md-3 col-sm-0"></div>
 	 <div class="col-lg-3 col-md-4 col-sm-10">
 		<form method='POST' action='/tales/p_new' role='form'>
@@ -30,8 +30,7 @@
 			<button type='submit' class='btn btn-default'>Submit</button>
 		</form>
 	</div>
-	<div class="col-lg-2 col-md-2 col-sm-2 wordcounter">
-		<p> JS word count goes here
+	<div class="col-lg-2 col-md-2 col-sm-2 counter">
 	</div>
 	<div class="col-lg-3 col-md-2 col-sm-0"></div>
 <?php else: ?>
@@ -39,7 +38,7 @@
 		 <div class="col-lg-3 col-md-4 col-sm-10">
 			
 			<!-- Display the current contents of the Tale -->
-			<p>THE STORY SO FAR....</p>
+			<h1>THE STORY SO FAR....</h1>
 			<div class = "display_title">
 				<?php if(isset($story_title)) echo $story_title; ?>
 			</div>
@@ -69,8 +68,9 @@
 			<button type='submit' class='btn btn-default'>Submit</button>
 		</form>
 		</div>
-	<div class="col-lg-2 col-md-2 col-sm-2 wordcounter">
-		<p> JS word count goes here
+	<div class="col-lg-2 col-md-2 col-sm-2 counter">
 	</div>
 	<div class="col-lg-3 col-md-2 col-sm-0"></div>
 <?php endif; ?>
+
+<script src="/js/wordcount.js"></script>

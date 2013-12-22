@@ -8,6 +8,7 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/custom.css" rel="stylesheet">
 	<script src="/js/respond.js"></script>	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 					
 	<!-- Controller Specific JS/CSS -->
 	<?php if(isset($client_files_head)) echo $client_files_head; ?>
@@ -49,7 +50,7 @@
 		<?php if(isset($client_files_body)) echo $client_files_body; ?>
 	</div>
 
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	
     <script src="/js/bootstrap.min.js"></script>
 </body>
 </html>

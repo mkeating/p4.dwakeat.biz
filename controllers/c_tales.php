@@ -180,7 +180,7 @@ class tales_controller extends base_controller {
 				WHERE tale_id = '".$tale[0]['tale_id']."'";
 
 			$all_authors = DB::instance(DB_NAME)->select_rows($q);
-			$all_authors_ids;
+			$all_authors_ids = [];
 
 			foreach ($all_authors as $key => $value) {
 				array_push($all_authors_ids, $value['user_id']);
@@ -216,8 +216,6 @@ class tales_controller extends base_controller {
 				unset($to);
 				
 			}
-			
-			
 
 		}
 		else{
@@ -273,7 +271,7 @@ class tales_controller extends base_controller {
 
 			$update_next_author = Array("current_tale" => $tale[0]['tale_id']);
 			DB::instance(DB_NAME)->update("users", $update_next_author, "WHERE user_id = '".$next_author[0]['user_id']."'");
-			}
+			
 			
 			#send email to next author (no opt out functionality currently)
 			$to[] = Array(
@@ -292,10 +290,11 @@ class tales_controller extends base_controller {
 			$bcc = "";
 
 			$email = Email::send($to, $from, $subject, $body, true, $cc, $bcc);
-			
+			}
 
 			#redirect
 			Router::redirect('/users/home');
+
 
 	}
 	

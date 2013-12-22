@@ -20,13 +20,6 @@
 	padding-top: 20%;
 }
 
-.display_title{
-	font-size: 3em;
-}
-
-.display_content{
-	font-size: 2em;
-}
 
 
 .home_column{
@@ -36,3 +29,20 @@
 .home_column img{
 	float:right;
 }
+
+
+/* library/tales specific */
+
+a {
+  text-decoration: none; /* no underline */
+}
+
+.display_title{
+	font-size: 3em;
+}
+
+.display_content{
+	font-size: 1em;
+}
+
+/* end library */

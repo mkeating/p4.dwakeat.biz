@@ -18,16 +18,23 @@ class library_controller extends base_controller {
 
 		$all_tales = DB::instance(DB_NAME)->select_rows($all_tales_q);
 
+		$library = "";
+
 		foreach($all_tales as $tale => $value){
 			
 			$link = "/library/tale/".$value['tale_id'];
 
 			echo $link."<br>";
 
-			echo "<a href=".$link.">".$value['title']."</a><br>";
+			$library = $library."<a href=".$link.">".$value['title']."</a><br>";
 
-		}	
-
+		}
+		# setup view
+		$this->template->content = View::instance('v_library_index');
+		$this->template->content->library = $library;
+		
+		# render template
+		echo $this->template;
 
 		
 	}
@@ -50,26 +57,31 @@ class library_controller extends base_controller {
 		$title = DB::instance(DB_NAME)->select_field($title_q);
 		//echo "<h1>".$title."</h1>";
 
-		$story ="";
+		$story = "";
+		$writers = "";
+
 		foreach($tale as $key => $value){
 			
-			$story = $story."<div class=>".$value['content']."/div>";
-		}
-
-		echo "<h1>Written by:</h1>";
-		foreach($tale as $key => $value){
+			$story = $story."<div class='_".$value['section']."'>".$value['content']."</div>";
 
 			$user_q = "SELECT *
 				FROM users
 				WHERE user_id = ".$value['user_id'];
 
 			$user = DB::instance(DB_NAME)->select_rows($user_q);
-			echo $user[0]['name'];
+			$writers = $writers."<div class='_".$value['section']."'><a href='/library/user/".$value['user_id']."'>".$user[0]['name']."</a></div><br>";
 
+			
 		}
 		# setup view
-		$this->template->content = View::instance('v_users_home');
-		$this->template->content->title = $title;
+		$this->template->content = View::instance('v_library_tale');
+		$this->template->content->story_title = $title;
+		$this->template->content->story = $story;
+		$this->template->content->writers = $writers;
+	
+
+		# render template
+		echo $this->template;
 
 
 	}
