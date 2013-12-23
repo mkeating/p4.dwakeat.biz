@@ -1,5 +1,7 @@
+$(document).ready(function(){
 
-	var totalAllowed = 16;
+
+	var totalAllowed = 200;
 	var text = '';
 	var words = [];
 	var wordsLeft;
@@ -31,6 +33,6 @@
 		}
 		$(".counter").text(wordsLeft + " words left").css('color', color);
 	})
-
+});
 
 
